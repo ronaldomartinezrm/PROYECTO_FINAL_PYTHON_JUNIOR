@@ -12,4 +12,10 @@ class Venta:
         """
         print("Método calcular_total() pendiente.")
 
+    def mostrar(self):
+        """
+            Muestra la información de la venta.
+        """
+        print("Método mostrar() pendiente.")
+
     

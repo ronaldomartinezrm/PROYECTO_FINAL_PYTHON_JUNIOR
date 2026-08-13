@@ -1,31 +1,50 @@
 class Producto:
-    def __init__(self):
+    def __init__(self, codigo, nombre, precio, stock):
         """
-            Constructor de la clase Producto.
-
-            Este método recibirá los atributos necesarios para representar un producto.
+            En mi sistema todo producto tendrá los siguientes atributos:
+            * Código
+            * nombre
+            * precio
+            * stock
         """
+        self.codigo = codigo
+        self.nombre = nombre
+        self.precio = precio
+        self.stock = stock
 
     def mostrar(self):
         """
             Muestra la información del producto.
         """
-        print("Método mostrar() pendiente de implementación.")
+        print(f"Codigo: {self.codigo}")
+        print(f"Nombre: {self.nombre}")
+        print(f"Precio: {self.precio}")
+        print(f"Stock: {self.stock}")
 
-    def aumentar_stock(self):
+    def aumentar_stock(self, cantidad):
         """
-            Aumenta el stock disponible.
+        Aumenta el stock disponible.
         """
-        print("Método aumentar_stock() pendiente")
+        self.stock += cantidad
 
-    def disminuir_stock(self):
+    def disminuir_stock(self, cantidad):
         """
-            Disminuye el stock disponible.
+            Disminuye el stock disponible
         """
-        print("Método disminuir_stock() pendiente")
+        if self.hay_stock(cantidad):
+            self.stock -= cantidad
+            return True # esta operación salió exitosa
 
-    def hay_stock(self):
+        return False
+
+    def disminuir_en_uno(self):
+        self.stock -= 1
+        
+
+    def hay_stock(self, cantidad):
         """
-            Verifica si hay stock suficiente.
+            Verifica si existe stock suficiente
         """
-        print("Método hay_stock() pendiente")   
+        return self.stock >= cantidad
+    
+    
